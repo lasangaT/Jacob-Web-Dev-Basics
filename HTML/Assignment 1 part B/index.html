@@ -22,7 +22,7 @@
         .sidebar {
             width: 30%;
             padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #3498db;
         }
         .container {
             display: flex;
@@ -34,6 +34,22 @@
             width: 125px;
             height: auto;
         }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e088d; 
+            color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            border: 1px solid #3498db;
+            padding: 10px;
+            text-align: center;
+        }
+        
     </style>
         <!--header is for the main title and logo, custom-image is for the main logo, main-block is for the main block of text, sidebar is for the space for the images, container is to seperate the main block and siderbar and custom image2 is for resizing the images in the sidebar.-->
     <header>
@@ -49,13 +65,15 @@
   <body>
 
 
-      <ul>
-        <li><span>Home</span></li>
-        <li><a href="#">Get started</a></li>
-        <li><a href="#">Photos</a></li>
-        <li><a href="#">Gear</a></li>
-        <li><a href="#">Forum</a></li>
-      </ul>
+        <table>
+            <tr>
+                <th><span>Home</span></th>
+                <th><a href="#">Get started</a></th>
+                <th><a href="#">Photos</a></th>
+                <th><a href="#">Gear</a></th>
+                <th><a href="#">Forum</a></th>
+            </tr>
+        </table>
       <div class="container"><!--allows for the webpage to have side by side a block of text and images-->
         <div class="main-block">
             <h2>Welcome</h2>
@@ -72,10 +90,10 @@
         </div>
       </div>
 
-
-      <p>This fake website example is CC0 — any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
-
-      <p><a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.</p>
+      <footer>
+        <p>This fake website example is CC0 — any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
+        <p><a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.</p>
+      </footer>
 
   </body>
 </html>
