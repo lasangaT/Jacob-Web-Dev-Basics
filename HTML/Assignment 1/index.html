@@ -6,13 +6,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dr. Eleanor Gaye">
     <title>Marking up a letter</title>
 </head>
 <address align="right"><!--makes an address and assigns it to the right of the display-->
-    Mr.Jacob Barnes
+    <strong>Dr. Elearnor Gaye</strong>
     <br><!--seperates text by starting at the next line-->
-    Awesome technology faculty
+    Awesome Science faculty
     <br>
     University of Awesome
     <br>
@@ -22,19 +22,19 @@
     <br>
     USA
     <br>
-    Tel: 905.721.3000  
+    <strong>Tel:</strong> 123-456-7890
     <br>
-    Email: jacob.barnes@dcmail.ca
+    <strong>Email:</strong> no_reply@example.com
     <br>
     <br>
     <div class ="sender-column"><!--first date-->
-    23 January 2024
+    <time datetime="2024-1-23">23 January 2024</time>
     </div>
 </address>
 <body>
     <address><!--makes an address for the receiver-->
     <br>
-    <b>Miss Eileen Dover</b>
+    <strong>Miss Eileen Dover</strong>
     <br>
     4321 Cliff Top Edge
     <br>
@@ -43,29 +43,51 @@
     UK
     </address>
     <h1>Re: Eileen Dover university application</h1>
+    <p>Dear Eileen,</p>
+    <p></p>
+    <p>Thank you for your recent application to join us at the University of Awesome's science faculty to study as part of your PhD next year. I will awnser your questions one by one, in the ofllowing sections.</p>
     <h2>Starting Dates</h2><!--makes a header for starting dates, then creats a list of the first, second and third semester start dates.-->
     <p>We are happy to accomodate you starting your study with us at any time, however it would suit us better if you could start at the beginning of a semester; the start dates for each one are as follows:</p>
-    <ol>
-        <li>First semester: 9 September 2024</li>
-        <li>Second semester: 15 January 2025</li>
-        <li>Third semester: 2 May 2025</li>
-    </ol>
+    <ul>
+        <li>First semester: <time datetime="2024-9-9">9 September 2024</time></li>
+        <li>Second semester: <time datetime="2025-1-15">15 January 2025</time></li>
+        <li>Third semester: <time datetime="2025-5-2">2 May 2025</time></li>
+    </ul>
     <p>Please let us know if this is ok, and if so which start date you would prefer.</p>
     <p>You can find more information about <a href="https://www.google.ca/">important university dates</a> on our website.</p><!--hyperlink for user to see more information-->
-    <h2>Abbreviations/anonyms on letter</h2><!--makes header for five abbreviations/anonyms--> 
+    <h2>Subjects of study</h2>
+    <p>At the Awesome Science Faculty, we have a pretty open-minded research facility - as long as the subjecs fall somewhere in the realm of science and technology. You seem like an intelligent, deidcated researcher, and just the kind of person we'd like to have on our team. Saying that, of the ideas you submitted we were most intrigued by are as follows, in order of priority:</p>
     <ol>
-        <li>PhD: Doctor of Philosophy</li>
-        <li>HTML: Hypertext Markup Language</li>
-        <li>CSS: Cascading Style Sheets</li>
-        <li>BC: Before Christ</li>
-        <li>Esq: Esquire</li>
+        <li>Turning H₂O into wine, and the health benefits of Resveratol(C<sub>14</sub>H<sub>12</sub>O<sub>3</sub>.)</li>
+        <li>Measuring the effect on performance of funk bassplayers at temperatures exceeding 30°C(86°F), when the audience size exponentially increases (effect of 3 x 10<sup>3</sup> increasing to 3 x 10<sup>4</sup>.)</li>
+        <li>HTML and CSS constructs for representing musical scores.</li>
     </ol>
+    <p>So please can you provide more information on each of these subjects, including how long you'd expect the research to take, required staff and other resources, and anything else you think we'd need to know? Thanks.</p>
+    <h2>Exotic dance moves</h2>
+    <p>Yes, you are right! As part of my post-doctorate work, I did study exotic tribal dances. To awnser your question, my favourite dances are as follows, with deffinitions:</p>
+    <dl>
+        <dt>Polynesian chicken dance</dt>
+        <dd>A little known but very influencial dance dating back as far as 300BC, a whole village would dance around in a circle like chickens, to encourage their livestock to be "fruitful".</dd>
+        <dt>Icelandic brownian shuffle</dt>
+        <dd>Before the Icelanders developed fire as means of getting warm, they used to practice this dance, which involved huddling close together in a circle on the floor, and shuffling their bodies around in imperceptibly tiny, very rapid movements. One of my fellow students used to say that he thought this dance inspired modern styles such as Twerking.</dd>
+        <dt>Arctic robot dance</dt>
+        <dd>An interesting example of historic misinformation, English explorers in the 1960s believes to have discovered a new dance style characterised by "robotic", stilted movements, being practiced by inhabitants of Northern Alaska and Canada. Later on however it was discovered that they were just moving like this because they were really cold.</dd>
+    </dl>
+    <p>For more information of my research, see my <a href="http://example.com">Exotic dance research page</a></p><!--hyperlink for user to see more information-->
+    <title>Abbreviations/anonyms on letter</h2><!--makes header for five abbreviations/anonyms--> 
+    <abbr>PhD: Doctor of Philosophy</abbr>
+    <abbr>HTML: Hypertext Markup Language</abbr>
+    <abbr>CSS: Cascading Style Sheets</abbr>
+    <abbr>BC: Before Christ</abbr>
+    <abbr>Esq: Esquire</abbr>
     <h2>Sub/Superscripts</h2><!--makes a header for the chemical formulae and the numbers with the power of instead of 103 or 104.-->
     <ol>
-        <li>Chemical formulae: H₂O, CO₂</li>
-        <li>Numbers: 10³ and 10⁴</li>
+        <li>Chemical formulae: H<sub>2</sub>O, CO<sub>2</sub></li>
+        <li>Numbers: 10<sup>3</sup> and 10<sup>4</sup></li>
     </ol>
-    <p>For more information of my research, see my <a href="http://example.com">Exotic dance research page</a></p><!--hyperlink for user to see more information-->
+    <p>Yours sincerely,</p>
+    <p></p>
+    <p>Mr Eleanor Gaye</p>
     <p>University of Awesome motto: "Be awesome to eachother." -- <i>The memoirs of Bill S Preston, Esq</i></p><!--Motto and credits-->
 </body>
 </html>
