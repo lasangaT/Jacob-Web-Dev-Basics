@@ -1,3 +1,7 @@
+<!--Author: Jacob Barnes, 100919897
+  Date: 2024-01-31
+  Description: This webpage displays planet data from our solor system in a well organized table.
+-->
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -42,15 +46,22 @@ caption {
   padding: 10px;
 }
 
+
     </style>
   </head>
   
   <body>
     <h1>Planet data</h1>
-    <caption>Data about the planets of our solar system (Planetary facts taken from <a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>).</caption>
     <table>
+      <caption>Data about the planets of our solar system (Planetary facts taken from <a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>).</caption>
+      <colgroup>
+        <col span="2">
+        <col style="border: 2px solid black">
+        <col span="9">
+      </colgroup>
       <thead>
         <tr>
+          <td colspan="2"></td>
           <th>Name</th>
           <th>Mass (10<sup>24</sup>kg</th>
           <th>Diameter (km)</th>
@@ -65,7 +76,8 @@ caption {
       </thead>
       <tbody>
         <tr>
-          <td>Mercury</td>
+          <th rowspan="4" colspan="2" scope="rowgroup">Terrestial planets</th>
+          <td><b>Mercury</b></td>
           <td>0.330</td>
           <td>4,879</td>
           <td>5427</td>
@@ -77,7 +89,7 @@ caption {
           <td>Closest to the Sun</td>
         </tr>
         <tr>
-          <td>Venus</td>
+          <td><b>Venus</b></td>
           <td>4.87</td>
           <td>12,104</td>
           <td>5243</td>
@@ -88,7 +100,7 @@ caption {
           <td>0</td>
         </tr>
         <tr>
-          <td>Earth</td>
+          <td><b>Earth</b></td>
           <td>5.97</td>
           <td>12,756</td>
           <td>5514</td>
@@ -100,7 +112,7 @@ caption {
           <td>Our world</td>
         </tr>
         <tr>
-          <td>Mars</td>
+          <td><b>Mars</b></td>
           <td>0.642</td>
           <td>6,792</td>
           <td>3933</td>
@@ -112,12 +124,67 @@ caption {
           <td>The red planet</td>
         </tr>
         <tr>
-          <td>Jupiter</td>
+          <th rowspan="4" scope="rowgroup">Jovian planets</th>
+          <th rowspan="2" scope="rowgroup">Gas giants</th>
+          <td><b>Jupiter</b></td>
+          <td>1898</td>
+          <td>142,984</td>
+          <td>1326</td>
+          <td>23.1</td>
+          <td>9.9</td>
+          <td>778.6</td>
+          <td>-110</td>
+          <td>67</td>
+          <td>The largest planet</td>
+        </tr>
+        <tr>
+          <td><b>Saturn</b></td>
+          <td>568</td>
+          <td>120,536</td>
+          <td>687</td>
+          <td>9.0</td>
+          <td>10.7</td>
+          <td>1433.5</td>
+          <td>-140</td>
+          <td>62</td>
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">Ice giants</th>
+          <td><b>Uranus</b></td>
+          <td>86.8</td>
+          <td>51,118</td>
+          <td>1271</td>
+          <td>8.7</td>
+          <td>17.2</td>
+          <td>2872.5</td>
+          <td>-195</td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <td><b>Neptune</b></td>
+          <td>102</td>
+          <td>49,528</td>
+          <td>1638</td>
+          <td>11.0</td>
+          <td>16.1</td>
+          <td>4495.1</td>
+          <td>-200</td>
+          <td>14</td>
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">Dwarf planets</th>
+          <td>Pluto</b></td>
+          <td>0.0146</td>
+          <td>2,370</td>
+          <td>2095</td>
+          <td>0.7</td>
+          <td>153.3</td>
+          <td>5906.4</td>
+          <td>-225</td>
+          <td>5</td>
+          <td>Declassified as a planet in 2006, but this <a href="http://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-system/16578959/">remains controversial</a>.</td>
         </tr>
       </tbody>
     </table>
-    
-
-
   </body>
 </html>
