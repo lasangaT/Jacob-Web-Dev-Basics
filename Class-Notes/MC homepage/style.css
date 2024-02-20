@@ -1,0 +1,110 @@
+.navigation-bar-container {
+    border: 2px solid blue;
+    padding: 0;
+    display: flex; /*changes from top to bottom to left to right*/
+    font-size: 10px;
+    justify-content: space-between; /*puts a space between 2 items*/
+    align-items: flex-start;
+    height: 5vh;
+}
+
+img {
+    margin: 0;
+    border: 3px solid red;
+}
+
+.left-navigation-bar {
+    border: 2px solid red;
+    display: flex;
+}
+
+.right-navigation-bar {
+    border: 2px solid purple;
+    display: flex;
+}
+
+.left-navigation-list {
+    border: 2px solid black;
+    display: flex;
+}
+
+.right-navigation-list {
+    border: 2px solid black;
+    display: flex;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 0 2vw 0 2vw;
+    padding: 0;
+}
+
+.display-container {
+    height: 55vh;
+    display: flex;
+    background-image: url(https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-Copilot-001:VP4-1399x600);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.right-display {
+    width: 55%
+}
+
+.left-display {
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-display-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 60%;
+}
+
+.left-display-content * {
+    margin: 0;
+    padding: 0;
+}
+
+.new-banner {
+    background-color: #ffb002;
+    font-weight: bold;
+    padding: 3px 5px 3px 5px;
+}
+
+.left-display-content > p {
+    font-size: 10px;
+}
+
+.left-display-buttons > button {
+    color: white;
+    background-color: #0067b8;
+    padding: 5px;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.option a {
+    font-size: 12px;
+}
+
+i {
+    font-size: 24px;
+}
