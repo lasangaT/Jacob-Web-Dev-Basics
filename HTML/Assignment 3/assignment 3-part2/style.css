@@ -5,9 +5,9 @@ html {
 /* Your CSS below here */
 
 div {
-  border: 10px solid #b80e02;
+  border: 2px solid #b80e02;
   width: 200px;
-  height: auto;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,4 +16,5 @@ div {
   color: white;
   text-shadow: 1px 1px 2px black;
   border-radius: 8px;
+  box-shadow: -5px -5px 10px rgba(0,0,0,0.2) inset;
 }
