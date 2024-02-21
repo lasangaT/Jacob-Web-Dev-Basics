@@ -5,14 +5,14 @@ html {
 /* Your CSS below here */
 
 div {
-  border: 2px #b80e02;
+  border: 10px solid #b80e02;
   width: 200px;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.125rem;
-  background-color: solid red;
+  background-color: red;
   color: white;
   text-shadow: 1px 1px 2px black;
   border-radius: 8px;
