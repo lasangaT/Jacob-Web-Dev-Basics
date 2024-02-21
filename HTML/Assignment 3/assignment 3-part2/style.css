@@ -3,3 +3,11 @@ html {
 }
 
 /* Your CSS below here */
+
+div {
+  border: 2px #b80e02;
+  width: 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
