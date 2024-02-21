@@ -5,7 +5,7 @@ html {
 /* Your CSS below here */
 
 div {
-  border: 2px solid #b80e02;
+  border: 3px solid #b80e02;
   width: 200px;
   height: 200px;
   display: flex;
@@ -16,5 +16,17 @@ div {
   color: white;
   text-shadow: 1px 1px 2px black;
   border-radius: 8px;
-  box-shadow: -5px -5px 10px rgba(0,0,0,0.2) inset;
+  box-shadow: -5px -5px 10px rgba(0,0,0,0.3) inset,
+  5px 5px 10px rgba(255,255,255, 0.6) inset;
+  position: relative;
+}
+
+div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, transparent 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 100%);
 }
