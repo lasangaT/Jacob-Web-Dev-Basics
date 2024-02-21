@@ -8,7 +8,14 @@ body {
 }
 
 div {
-    /* border: 2px solid red; */
+    border: 2px #b80e02;
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    background-color: solid red;
 }
 
 .header {
