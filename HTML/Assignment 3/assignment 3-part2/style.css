@@ -11,17 +11,17 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.125rem;
+  font-size: 1.125rem;/*1.125rem = 18px */
   background-color: red;
   color: white;
   text-shadow: 1px 1px 2px black;
   border-radius: 8px;
-  box-shadow: -5px -5px 10px rgba(0,0,0,0.3) inset,
-  5px 5px 10px rgba(255,255,255, 0.6) inset;
+  box-shadow: -5px -5px 10px rgba(0,0,0,0.3) inset,/*black shadows for 3d effect */
+  5px 5px 10px rgba(255,255,255, 0.6) inset;  /*white shadows for 3d effect */
   position: relative;
 }
 
-div::after {
+div::after { /*this div adds a gradient to the entire box, starting from top left to bottom right, and it progressivly becomes darker the further down right you go. */
   content: "";
   position: absolute;
   top: 0;
