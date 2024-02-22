@@ -32,6 +32,8 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
   }
   
   nav a {
@@ -50,4 +52,22 @@ body {
 
   .feature {
       width: 200px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  article {
+    flex: 2;
+    margin-right: 20px;
+  }
+
+  aside {
+    flex: 1;
+  }
+
+  article img {
+    float: left;
+    margin-right: 20px;
   }
