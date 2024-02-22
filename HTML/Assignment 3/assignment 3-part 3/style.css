@@ -44,6 +44,11 @@ header, footer {
 
 /* WRITE YOUR CODE BELOW HERE */
 
+@font-face {
+  font-family: 'Alice';
+  src: url('C:\Users\34jeb\Downloads\alice\Alice-Regular.ttf') format('ttf');
+}
+
 body {
   font-size: 10px;
 }
@@ -52,9 +57,11 @@ h1 {
   font-size: 40px;
   text-align: center;
   letter-spacing: 1px;
+  font-family: 'Alice', sans-serif;
 }
 
 h2 {
+  font-family: 'Alice', sans-serif;
   font-size: 32px;
   letter-spacing: 0.5px;
 }
@@ -72,10 +79,20 @@ nav ul {
 }
 nav li {
   font-size: 20px;
+  color: #a66;
   border: 2px solid #a66;
   margin-bottom: 10px;
   text-align: center;
   padding-bottom: 5%;
   padding-top: 5%;
   width: 185px;
+}
+
+a {
+  color: #a66;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
 }
