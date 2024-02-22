@@ -1,3 +1,7 @@
+/*Jacob Barnes - 100919897
+Feb 22, 2023
+This css file changing the sizes and placement of images to allow them to fit nicely in their columns, or next to an article.*/
+
 body {
     background-color: #fff;
     color: #333;
@@ -84,17 +88,14 @@ body {
     text-align: center;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) {/* when the viewport is larger then 768px, the folowing applies */
     .grid {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
     }
-    .sidebar {
-      flex: 0 0 30%; /* Adjust the width as needed */
-      text-align: left;
-    }
+    
     .photos {
       width: 300px;
       height: auto;
