@@ -68,24 +68,14 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-  article {
+  article {/*seperates itself from the columns of images by use of margins*/
     flex: 2;
     margin-right: 20px;
   }
 
-  aside {
-    flex: 1;
-    text-align: center;
-  }
-
-  article img {
+  article img {/* for the main image in the article*/
     float: left;
     margin-right: 20px;
-  }
-
-  .sidebar {
-    flex: 1;
-    text-align: center;
   }
 
   @media (min-width: 768px) {/* when the viewport is larger then 768px, the folowing applies */
