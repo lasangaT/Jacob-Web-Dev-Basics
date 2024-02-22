@@ -43,3 +43,22 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+
+body {
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 25px;
+}
