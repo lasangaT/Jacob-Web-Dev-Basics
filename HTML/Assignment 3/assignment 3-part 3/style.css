@@ -77,6 +77,11 @@ p {
   text-indent: 20px;
 }
 
+p a {
+  position: relative;
+}
+
+
 nav ul {
   list-style-type: none;
 }
@@ -98,4 +103,12 @@ a {
 nav a {
   text-decoration: none;/*removes underline only on the navbar items that have a link*/
   font-weight: bold;
+}
+
+p a::after{
+  content: url('external-link-52.png');
+  margin-left: 5px;
+  width: 12px;
+  height: 12px;
+  background-size: auto;
 }
