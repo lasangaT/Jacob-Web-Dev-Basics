@@ -1,4 +1,7 @@
 /* General setup */
+/* Jacob Barnes - 100919897
+Feb 21, 2024
+this css stylesheet contains numerous modifications to font, font size, margins, borders, text colour and so on*/
 
 * {
   box-sizing: border-box;
@@ -46,7 +49,7 @@ header, footer {
 
 @font-face {
   font-family: 'Alice';
-  src: url('C:\Users\34jeb\Downloads\alice\Alice-Regular.ttf') format('ttf');
+  src: url('C:\Users\34jeb\Downloads\alice\Alice-Regular.ttf') format('ttf'); /*adds a font to be used later*/
 }
 
 body {
@@ -57,11 +60,11 @@ h1 {
   font-size: 40px;
   text-align: center;
   letter-spacing: 1px;
-  font-family: 'Alice', serif;
+  font-family: 'Alice', serif; /*uses the previously mentionned font as serif*/
 }
 
 h2 {
-  font-family: 'Alice', sans-serif;
+  font-family: 'Alice', sans-serif; /*uses the font as previously mentionned as sans-serif*/
   font-size: 32px;
   letter-spacing: 0.5px;
 }
@@ -81,7 +84,7 @@ nav li {
   font-size: 20px;
   color: #a66;
   border: 2px solid #a66;
-  margin-bottom: 10px;
+  margin-bottom: 10px;/*seperates each list item on the nav bar, to make it look nice and clean*/
   text-align: center;
   padding-bottom: 5%;
   padding-top: 5%;
@@ -93,6 +96,6 @@ a {
 }
 
 nav a {
-  text-decoration: none;
+  text-decoration: none;/*removes underline only on the navbar items that have a link*/
   font-weight: bold;
 }
