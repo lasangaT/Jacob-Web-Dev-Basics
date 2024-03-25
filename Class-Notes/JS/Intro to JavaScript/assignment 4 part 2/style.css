@@ -41,3 +41,7 @@ button {
   float: left;
   cursor: pointer;
 }
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
