@@ -2,7 +2,7 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { 
     const customName = document.getElementById('customname');
     const us = document.getElementById('us');
     const uk = document.getElementById('uk');
@@ -18,28 +18,28 @@ document.addEventListener('DOMContentLoaded', function() {
       return array[random];
     }
   
-    randomize.addEventListener('click', function() {
-      let newStory = storytext;
+    randomize.addEventListener('click', function() {//button
+      let newStory = storytext;//sets newStory to the text above
   
       if (customName.value !== '') {
         const name = customName.value;
-        newStory = newStory.replace('Bob', name);
+        newStory = newStory.replace('Bob', name); // Replaces bob with whatever name is entered
       }
   
       if (document.getElementById('uk').checked) {
         const weight = Math.round(300 / 14) + ' stone';
-        const temperature = Math.round((94 - 32) * (5 / 9)) + ' centigrade';
+        const temperature = Math.round((94 - 32) * (5 / 9)) + ' centigrade';//swaps temperature and weight if uk is selected
         newStory = newStory
           .replace('94 fahrenheit', temperature)
           .replace('300 pounds', weight);
       }
   
-      const xItem = randomValueFromArray(insertx);
+      const xItem = randomValueFromArray(insertx);//sets Item to a random value frm the respective array
       const yItem = randomValueFromArray(inserty);
       const zItem = randomValueFromArray(insertz);
   
       newStory = newStory
-        .replace(':insertx:', xItem)
+        .replace(':insertx:', xItem)//resplaces :insert: in the newStory with the appropriate item.
         .replace(':inserty:', yItem)
         .replace(':insertz:', zItem)
         .replace(':insertx:', xItem);
