@@ -2,6 +2,12 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+// Set canvas size to match actual canvas element size
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+
+
 const width = canvas.width;
 const height = canvas.height;
 
@@ -23,6 +29,7 @@ class Ball extends Shape {
   }
 
   draw() {
+    console.log('Drawing ball at:', this.x, this.y);
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -30,6 +37,7 @@ class Ball extends Shape {
   }
 
   update() {
+    console.log('Updating ball position to:', this.x, this.y); // Check if update is called
     if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
       this.velX = -(this.velX);
     }
@@ -43,6 +51,7 @@ class Ball extends Shape {
   }
 
   collisionDetect() {
+    console.log('Checking collision for ball at:', this.x, this.y);
     for (const ball of balls) {
       if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
@@ -57,6 +66,7 @@ class Ball extends Shape {
   }
 }
 
+// EvilCircle class commented out
 class EvilCircle extends Shape {
   constructor(x, y) {
     super(x, y, 20, 20);
@@ -146,6 +156,8 @@ while (balls.length < 25) {
     size
   );
 
+  console.log('Ball created:', ball); // Check if balls are created properly
+
   balls.push(ball);
 }
 
@@ -168,6 +180,7 @@ function loop() {
       ball.collisionDetect();
     }
   }
+
 
   evilCircle.draw();
   evilCircle.checkBounds();
