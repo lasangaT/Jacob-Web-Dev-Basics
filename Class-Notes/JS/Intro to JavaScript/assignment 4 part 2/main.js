@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const thumbBar = document.getElementById('thumbBar');
   const btnDarken = document.querySelector('.dark');
 
-  images.forEach(filename => {
+  images.forEach((filename, index) => {
     const img = document.createElement('img');
     img.setAttribute('src', 'images/' + filename);
     img.setAttribute('alt', altText[filename]);
@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
     thumbBar.appendChild(img);
   });
 
-  if (btnDarken) {
-    btnDarken.addEventListener('click', function() {
-      console.log('Darken button clicked');
-      displayedImage.style.filter = 'brightness(50%)';
-      displayedImage.classList.toggle('dark');
-    });
-  }
+  btnDarken.addEventListener('click', function() {
+    console.log('Darken button clicked');
+    if (displayedImage.classList.contains('dark')) {
+      displayedImage.classList.remove('dark');
+    } else {
+      displayedImage.classList.add('dark');
+    }
+  });
 });
