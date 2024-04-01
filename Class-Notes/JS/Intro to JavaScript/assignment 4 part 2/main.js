@@ -27,8 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Darken button clicked');
     if (displayedImage.classList.contains('dark')) {
       displayedImage.classList.remove('dark');
+      btnDarken.textContent = 'Darken';
+      btnDarken.style.backgroundColor = 'rgba(150,150,150,0.6)';
     } else {
       displayedImage.classList.add('dark');
+      btnDarken.textContent = 'Lighten';
+      btnDarken.style.backgroundColor = 'rgba(255,255,255,0.6)';
     }
   });
 });
