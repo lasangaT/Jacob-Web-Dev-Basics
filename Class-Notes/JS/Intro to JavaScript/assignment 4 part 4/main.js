@@ -18,6 +18,7 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
+//shape class 
 class Shape {
   constructor(x, y, velX, velY) {
     this.x = x;
@@ -27,6 +28,7 @@ class Shape {
   }
 }
 
+//ball class is created for bouncing balls
 class Ball extends Shape {
   constructor(x, y, velX, velY, size, color) {
     super(x, y, velX, velY);
@@ -35,13 +37,14 @@ class Ball extends Shape {
     this.exists = true;
   }
 
+  //draws the balls onto the canvas
   draw() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
-
+  //updates the balls position
   update() {
     if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
       this.velX = -(this.velX);
@@ -55,6 +58,7 @@ class Ball extends Shape {
     this.y += this.velY;
   }
 
+  //collision detection for collisions against other balls
   collisionDetect() {
     for (const ball of balls) {
       if (this !== ball && ball.exists) {
@@ -69,14 +73,14 @@ class Ball extends Shape {
     }
   }
 }
-
+//evil circle is a controllable circle
 class EvilCircle extends Shape {
   constructor(x, y) {
     super(x, y, 20, 20);
     this.color = "white";
     this.size = 10;
   }
-
+  //draws evil circle to the canvas
   draw() {
     ctx.lineWidth = 3;
     ctx.strokeStyle = this.color;
@@ -85,7 +89,7 @@ class EvilCircle extends Shape {
     ctx.stroke();
   }
 
-  checkBounds() {//does not allow balls to go out of the canvas
+  checkBounds() {//does not allow evil circle to go out of the canvas
     if ((this.x + this.size) >= width) {
       this.x -= this.size;
     }
@@ -118,10 +122,12 @@ class EvilCircle extends Shape {
   }
 }
 
+//array to store the balls
 const balls = [];
+//starts evil circle at the center of the canvas
 const evilCircle = new EvilCircle(width / 2, height / 2);
 
-while (balls.length < 25) { //ball count cannot go higher than 25 balls
+while (balls.length < 25) { //ball count cannot go higher than 25 balls, generates all 25
   const size = random(10, 20);
   const ball = new Ball(
     random(0 + size, width - size),
@@ -137,15 +143,17 @@ while (balls.length < 25) { //ball count cannot go higher than 25 balls
 
 let ballCount = balls.length;
 
-function updateScore() {
+function updateScore() {//updates the score (ballcount)
   const scoreElement = document.getElementById("score");
   scoreElement.textContent = `Ball count: ${ballCount}`;
 }
 
+//main loop draws everything, including balls and evil circle
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
+  //updates and draws each ball
   for (const ball of balls) {
     if (ball.exists) {
       ball.draw();
@@ -154,10 +162,12 @@ function loop() {
     }
   }
 
+  //draws and updates evil circle
   evilCircle.draw();
   evilCircle.checkBounds();
   evilCircle.collisionDetect();
 
+  //updates the ball count display
   ballCount = balls.filter(ball => ball.exists).length;
   updateScore();
 
