@@ -1,15 +1,22 @@
-// Setup canvas
+//sets up canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Set canvas size to match actual canvas element size
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 
-
-
 const width = canvas.width;
 const height = canvas.height;
+
+//generates a random number
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//generates a random colour
+function randomRGB() {
+  return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+}
 
 class Shape {
   constructor(x, y, velX, velY) {
@@ -29,7 +36,6 @@ class Ball extends Shape {
   }
 
   draw() {
-    console.log('Drawing ball at:', this.x, this.y);
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -37,7 +43,6 @@ class Ball extends Shape {
   }
 
   update() {
-    console.log('Updating ball position to:', this.x, this.y); // Check if update is called
     if ((this.x + this.size) >= width || (this.x - this.size) <= 0) {
       this.velX = -(this.velX);
     }
@@ -51,9 +56,8 @@ class Ball extends Shape {
   }
 
   collisionDetect() {
-    console.log('Checking collision for ball at:', this.x, this.y);
     for (const ball of balls) {
-      if (!(this === ball) && ball.exists) {
+      if (this !== ball && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -66,30 +70,11 @@ class Ball extends Shape {
   }
 }
 
-// EvilCircle class commented out
 class EvilCircle extends Shape {
   constructor(x, y) {
     super(x, y, 20, 20);
     this.color = "white";
     this.size = 10;
-
-    // Regular function to preserve context
-    window.addEventListener("keydown", function(e) {
-      switch (e.key) {
-        case "a":
-          this.x -= this.velX;
-          break;
-        case "d":
-          this.x += this.velX;
-          break;
-        case "w":
-          this.y -= this.velY;
-          break;
-        case "s":
-          this.y += this.velY;
-          break;
-      }
-    }.bind(this)); // bind the current `this` context to the function
   }
 
   draw() {
@@ -100,7 +85,7 @@ class EvilCircle extends Shape {
     ctx.stroke();
   }
 
-  checkBounds() {
+  checkBounds() {//does not allow balls to go out of the canvas
     if ((this.x + this.size) >= width) {
       this.x -= this.size;
     }
@@ -118,7 +103,7 @@ class EvilCircle extends Shape {
     }
   }
 
-  collisionDetect() {
+  collisionDetect() {//if a ball colides with evil circle, it eliminates it
     for (const ball of balls) {
       if (ball.exists) {
         const dx = this.x - ball.x;
@@ -133,30 +118,19 @@ class EvilCircle extends Shape {
   }
 }
 
-// Function to generate random number
-function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// Function to generate random color
-function randomRGB() {
-  return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
-}
-
 const balls = [];
+const evilCircle = new EvilCircle(width / 2, height / 2);
 
-while (balls.length < 25) {
+while (balls.length < 25) { //ball count cannot go higher than 25 balls
   const size = random(10, 20);
   const ball = new Ball(
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
     random(-7, 7),
-    randomRGB(),
-    size
+    size,
+    randomRGB()
   );
-
-  console.log('Ball created:', ball); // Check if balls are created properly
 
   balls.push(ball);
 }
@@ -169,7 +143,6 @@ function updateScore() {
 }
 
 function loop() {
-  console.log('Loop function called'); // Check if loop is being called
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
@@ -181,7 +154,6 @@ function loop() {
     }
   }
 
-
   evilCircle.draw();
   evilCircle.checkBounds();
   evilCircle.collisionDetect();
@@ -192,7 +164,22 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
+//controls for evilcircle
+window.addEventListener("keydown", function(e) {
+  switch (e.key) {
+    case "a":
+      evilCircle.x -= evilCircle.velX;
+      break;
+    case "d":
+      evilCircle.x += evilCircle.velX;
+      break;
+    case "w":
+      evilCircle.y -= evilCircle.velY;
+      break;
+    case "s":
+      evilCircle.y += evilCircle.velY;
+      break;
+  }
+});
 
-const evilCircle = new EvilCircle(width / 2, height / 2);
-
-loop(); // Start the animation loop
+loop();//loops
