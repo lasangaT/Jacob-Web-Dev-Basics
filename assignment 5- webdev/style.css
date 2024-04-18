@@ -1,4 +1,4 @@
-/* || General setup */
+/* General setup */
 
 html, body {
   margin: 0;
@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
 }
 
-/* || typography */
+/* Typography */
 
 font[size="7"], font[size="6"], font[size="5"] {
   font-family: 'Sonsie One', cursive;
@@ -49,9 +49,9 @@ p, li, table {
   line-height: 1.5;
 }
 
-/* || header layout */
+/* Header layout */
 
-nav[class="nav"], article, footer, .secondary {
+nav, article, footer, .secondary {
   background-color: white;
 }
 
@@ -63,28 +63,28 @@ article {
   margin-right: 10px;
 }
 
-nav[class="nav"] {
+nav {
   height: 50px;
-  background-color: ff80ff;
+  background-color: white;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
 }
 
-nav[class="nav"] ul {
+nav ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-nav[class="nav"] li {
+nav li {
   display: inline;
   text-align: center;
   flex: 1;
 }
 
-nav[class="nav"] a {
+nav a {
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
@@ -92,7 +92,7 @@ nav[class="nav"] a {
   color: black;
 }
 
-nav[class="nav"] .search {
+nav .search {
   flex: 1;
   display: flex;
   align-items: center;
@@ -117,7 +117,7 @@ nav[class="nav"] .search {
   color: white;
 }
 
-/* || main layout */
+/* Main layout */
 
 main {
   display: flex;
@@ -155,11 +155,11 @@ th[scope="col"] {
   border-bottom: 1px solid black;
 }
 
-tbody tr:nth-child(odd) {f
+tbody tr:nth-child(odd) {
   background-color: #def;
 }
 
-/* styling content images and audio */
+/* Styling content images and audio */
 
 img, audio {
   display: block;
@@ -196,17 +196,26 @@ audio {
 .comment-form .flex-pair {
   display: flex;
   padding: 0 3rem 1rem;
+  align-items: center;
 }
 
 .comment-form label {
-  align-self: center;
+  align-self: flex-start;
   flex: 2;
   text-align: right;
+  margin-right: 1rem;
 }
 
 .comment-form input {
-  margin-left: 1rem;
   flex: 6;
+  padding: 5px;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .show-hide {
@@ -214,12 +223,15 @@ audio {
   width: 150px;
 }
 
-.comment-form input, .comment-form label, .show-hide {
+.comment-form input,
+.comment-form label,
+.show-hide {
   font-size: 1.6rem;
   line-height: 32px;
 }
 
-.comment-form input[type="submit"], .show-hide {
+.comment-form input[type="submit"],
+.show-hide {
   background: #333;
   border: 0;
   color: white;
